@@ -1,1 +1,1 @@
-# intro-machine-learning-student
+# intro-machine-learning-students
