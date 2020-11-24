@@ -70,7 +70,7 @@ def test_2_9(answer):
     return("Success")
 
 def test_3_1(answer):
-    sha1(str(answer).encode('utf8')).hexdigest() == "381d0617aa4a47b800653fabafdd9d0d3f5ad2ca", "Your answer is incorrect. Are you looking at the output correctly?"
+    assert sha1(str(answer).encode('utf8')).hexdigest() == "381d0617aa4a47b800653fabafdd9d0d3f5ad2ca", "Your answer is incorrect. Are you looking at the output correctly?"
     return("Success")
 
 def test_3_2(answer):

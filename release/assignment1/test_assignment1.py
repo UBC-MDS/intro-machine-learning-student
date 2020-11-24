@@ -20,16 +20,16 @@ def test_1_2(answer1,answer2):
     assert sha1(str(answer1).encode('utf8')).hexdigest() == '88469548e6757e027666deef9d9979d33c6aec00', "Your answer for 'supervised' is incorrect. Please try again."
     assert sha1(str(answer2).encode('utf8')).hexdigest() == 'aaf3f256bedabb9adfec9331a0ac36955c9aba35', "Your answer for 'unsupervised' is incorrect. Please try again."
     return "Success"
-    
+
 def test_1_3_2(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
-    sha1(str(answer.lower()).encode('utf8')).hexdigest(
+    assert sha1(str(answer.lower()).encode('utf8')).hexdigest(
     ) == 'ea585073ff8843ad70c48735f623e8440e73cd57', "Your answer for 'ii' in incorrect. Please try again"
     return("Success")
-    
+
 def test_1_3_3(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
-    sha1(str(answer.lower() + 'k').encode('utf8')).hexdigest(
+    assert sha1(str(answer.lower() + 'k').encode('utf8')).hexdigest(
     ) == '5db2ee1c744c0068a109f910640164eeab637e08', "Your answer for 'iii' in incorrect. Please try again"
     return("Success")
 
@@ -38,13 +38,13 @@ def test_2_1_1(answer):
     assert sha1(answer.strip('s').lower().encode('utf8')).hexdigest(
     ) == 'c3499c2729730a7f807efb8676a92dcb6f8a3f8f', 'The answer for rows is incorrect. Please try again.'
     return("Success")
-    
+
 def test_2_1_2(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert sha1(answer.strip('s').lower().encode('utf8')).hexdigest(
     ) == '4b7615dce52c4c05ce4e1d374e9c61a13717ac7c', 'The answer for inputs is incorrect. Please try again.'
     return("Success")
-    
+
 def test_2_1_4(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     temp = sha1(answer.lower().encode('utf8')).hexdigest()
@@ -60,7 +60,7 @@ def test_2_2a(answer):
 
 def test_2_2b(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
-    sha1(str(sorted(answer)).encode('utf8')).hexdigest(
+    assert sha1(str(sorted(answer)).encode('utf8')).hexdigest(
     ) == '5ab0f64f0f9c950d61582cc9ff51210b87551599', "The names of features are incorrect. Besides the target column, what other columns are in the dataframe?"
     return "Success"
 
@@ -74,7 +74,7 @@ def test_2_2c(answer):
 
 def test_3_1(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
-    sha1(str(answer + 11).encode('utf8')).hexdigest(
+    assert sha1(str(answer + 11).encode('utf8')).hexdigest(
     ) == 'b3f0c7f6bb763af1be91d9e74eabfeb199dc1f1f', "The number of features is incorrect. The 'len' and '.columns' functions may be useful here."
     return "Success"
 
@@ -140,9 +140,8 @@ def test_4_7(answer):
 
 def test_4_8(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
-    case1 = (sha1(answer.encode('utf8')).hexdigest() == '7103f0aa18aa01027dc1e1e8783aeaa8b6a54feb')
-    case2 = (sha1(answer.encode('utf8')).hexdigest() == '64eef86abf4aa548c5aeb5263a5b2f87cfc4ebc3')
-    assert case1 or case2, 'Your answer is incorrect. Please try again'
+    assert sha1(str(answer.lower() + 'k').encode('utf8')).hexdigest(
+    ) == 'b86f6db284d374188d561d46b45b188d5631609a', 'Your answer is incorrect. Please try again'
     return "Success"
 
 
