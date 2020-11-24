@@ -140,8 +140,11 @@ def test_4_7(answer):
 
 def test_4_8(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
-    assert sha1(str(answer.lower() + 'k').encode('utf8')).hexdigest(
-    ) == 'b86f6db284d374188d561d46b45b188d5631609a', 'Your answer is incorrect. Please try again'
+    case1 = (sha1(str(answer.lower() + 'k').encode('utf8')).hexdigest(
+    ) == 'b86f6db284d374188d561d46b45b188d5631609a')
+    case2 = (sha1(str(answer.lower()).encode('utf8')).hexdigest() == '7103f0aa18aa01027dc1e1e8783aeaa8b6a54feb')
+    assert (case1 or case2) == True, 'Your answer is incorrect. Please try again'
+    
     return "Success"
 
 
