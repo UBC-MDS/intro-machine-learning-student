@@ -64,9 +64,9 @@ def test_2_8(answer):
     return("Success")
 
 def test_2_9(answer):
-    assert 'pred_offer_df' in answer.columns, "Make sure you are naming the columns with the predictions as 'pred_offer_df'."
-    assert list(answer['pred_offer_df']).count('happy') == 1, "Some predicted values are incorrect. Are you fitting the model and predicting correctly?"
-    assert list(answer['pred_offer_df']).count('unhappy') == 2, "Some predicted values are incorrect. Are you fitting the model and predicting correctly?" 
+    assert 'predicted' in answer.columns, "Make sure you are naming the columns with the predictions as 'predicted'."
+    assert list(answer['predicted']).count('happy') == 1, "Some predicted values are incorrect. Are you fitting the model and predicting correctly?"
+    assert list(answer['predicted']).count('unhappy') == 2, "Some predicted values are incorrect. Are you fitting the model and predicting correctly?" 
     return("Success")
 
 def test_3_1(answer):
