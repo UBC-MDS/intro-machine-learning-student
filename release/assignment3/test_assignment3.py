@@ -102,7 +102,6 @@ def test_3_5(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     answer = list(answer)
     assert min(answer) > 0 and max(answer) < 1, "The range of your values are incorrect. Are you taking the mean?"
-    assert [round(x,1) for x in answer] == [0.1, 0.0, 0.5, 0.9], "Your values are incorrect. Are you taking the mean?"
     return("Success")
 
 def test_4_1(answer1,answer2,answer3,answer4):
