@@ -149,7 +149,7 @@ def test_4_5(answer):
     return("Success")
 
 def test_4_6(answer):
-    assert sha1(str(answer).encode('utf8')).hexdigest() == "2493779251de822754e7d9cbd06e551dfa7fcd2b", "Your answer is incorrect. Are you finding the max value amongst all splits?"
+    assert sha1(str(float(answer)).encode('utf8')).hexdigest() == "2493779251de822754e7d9cbd06e551dfa7fcd2b", "Your answer is incorrect. Are you finding the max value amongst all splits?"
     return("Success")
 
 def test_4_7(answer):
