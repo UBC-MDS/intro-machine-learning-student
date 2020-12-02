@@ -53,7 +53,7 @@ def test_1_7(answer):
     except AttributeError as error:
         assert answer.mark == "bar", "Your plot is not a bar plot. Make sure you are using the 'mark_bar()' function"
     assert answer.encoding.x.shorthand == 'style:N' or answer.encoding.x.field == 'style:N' or answer.encoding.x.shorthand == 'style' or answer.encoding.x.field == 'style', "Make sure you are plotting 'style' on the x-axis."
-    assert answer.encoding.y.shorthand == 'count():Q' or answer.encoding.y.field == 'count():Q' or answer.encoding.y.shorthand == 'count()' or answer.encoding.y.field == 'count()', "Make sure you are plotting 'count()' on the y-axis."
+    assert answer.encoding.y.shorthand == 'count():Q' or answer.encoding.y.aggregate == 'count()' or answer.encoding.y.shorthand == 'count()' or answer.encoding.y.aggregate == 'count', "Make sure you are plotting 'count()' on the y-axis."
     return ("Success")
 
 
