@@ -87,9 +87,9 @@ def test_2_2(answer):
 
 def test_2_3(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
-    assert 'int' in str(list(answer)[0]), "Make sure you are specifying the data type to be int for the encoding."
-    assert 'ignore' in str(list(answer)[0]), "Make sure you are using the 'ignore' method to handle unknown cases."
-    assert 'most_frequent' in str(list(answer)[1]), "Make sure your using the simple imputer with the most_frequent strategy."
+    assert 'int' in str(list(answer)[1]), "Make sure you are specifying the data type to be int for the encoding."
+    assert 'ignore' in str(list(answer)[1]), "Make sure you are using the 'ignore' method to handle unknown cases."
+    assert 'most_frequent' in str(list(answer)[0]), "Make sure your using the simple imputer with the most_frequent strategy."
     return("Success")
 
 def test_2_4(answer):
