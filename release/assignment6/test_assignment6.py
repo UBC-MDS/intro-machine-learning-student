@@ -94,9 +94,9 @@ def test_2_3(answer):
 
 def test_2_4(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
-    assert 'if_binary' in str(list(answer)[0]), "Make sure you are dropping the binary variables."
-    assert 'int' in str(list(answer)[0]), "Make sure you are specifying the data type to be int for the encoding."
-    assert 'most_frequent' in str(list(answer)[1]), "Make sure your using the simple imputer with the most_frequent strategy."
+    assert 'if_binary' in str(list(answer)[1]), "Make sure you are dropping the binary variables."
+    assert 'int' in str(list(answer)[1]), "Make sure you are specifying the data type to be int for the encoding."
+    assert 'most_frequent' in str(list(answer)[0]), "Make sure your using the simple imputer with the most_frequent strategy."
     return("Success")
 
 def test_2_5(answer):
