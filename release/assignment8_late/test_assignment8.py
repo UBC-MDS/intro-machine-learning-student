@@ -72,8 +72,6 @@ def test_1_9(answer1, answer2):
     assert 'CountVectorizer()' in str(answer1.get_params()['steps']), "Make sure you are including count vectorizer as part of your pipeline"
     assert 'LogisticRegression' in str(answer1.get_params()['steps']), "Make sure you are including LogisticRegression as part of your pipeline"
     assert sorted(list(answer2.columns)) == ['fit_time', 'score_time', 'test_score', 'train_score'], "Your dataframe contains the incorrect columns. Are you setting up the model correctly?"
-    assert round(min(answer2['test_score']),2) == 0.82 and round(max(answer2['test_score']),2) == 0.85, "The range of your test scores is incorrect. Are you specifying the correct model?"
-    assert round(min(answer2['train_score']),2) == 1.0 and round(max(answer2['train_score']),2) == 1.0, "The range of your training scores is incorrect. Are you specifying the correct model?"
     return("Success")
 
 def test_1_10(answer):
@@ -177,10 +175,6 @@ def test_3_3(answer):
 def test_3_4(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert str(type(answer)) == "<class 'sklearn.metrics._plot.confusion_matrix.ConfusionMatrixDisplay'>", "Make sure you are generating a confusion matrix plot"
-    x1 = [round(x,3) for x in list(list(answer.confusion_matrix)[0])]
-    x2 = [round(x,3) for x in list(list(answer.confusion_matrix)[1])]
-    assert x1 == [0.436, 0.064], "Your confusion matrix values are wrong. Are you plotting correctly?"
-    assert x2 == [0.059, 0.441], "Your confusion matrix values are wrong. Are you plotting correctly?"
     return("Success")
 
 def test_3_5_1(answer):

@@ -48,7 +48,7 @@ def test_1_5_2(answer):
     
 def test_1_5_3(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
-    assert sha1(str(round(answer,3)).encode('utf8')).hexdigest() == "856b62aa687c0aa2b0deb2980b3dd887b3c93ff8", "Your answer is incorrect. Please try again."
+    assert sha1(str(round(answer,3)).encode('utf8')).hexdigest() == "18739de0047c291fd062b8733600651cf952d304", "Your answer is incorrect. Please try again."
     return("Success")
     
 def test_1_6(answer):
@@ -152,8 +152,8 @@ def test_2_8(answer):
     assert answer['train_precision'] >= 5.0, "The range of your training precision scores is incorrect. Are you fitting the model properly?"
     assert answer['test_recall'] >= 2.1, "The range of your test recall scores is incorrect. Are you fitting the model properly?"
     assert answer['train_recall'] >= 5.0, "The range of your training recall scores is incorrect. Are you fitting the model properly?"
-    assert answer['test_f1'] >= 2.8, "The range of your test f1 scores is incorrect. Are you fitting the model properly?"
-    assert answer['train_f1'] >= 5.0, "The range of your training f1 scores is incorrect. Are you fitting the model properly?"
+    assert answer['test_f1'] >= 2.0, "The range of your test f1 scores is incorrect. Are you fitting the model properly?"
+    assert answer['train_f1'] >= 4.0, "The range of your training f1 scores is incorrect. Are you fitting the model properly?"
     return("Success")
     
 def test_2_9(answer):
@@ -179,9 +179,17 @@ def test_2_11(answer1,answer2):
     
 def test_2_12_1(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
-    assert sha1(str(answer['randomforestclassifier__max_depth']).encode('utf8')).hexdigest() == "0ade7c2cf97f75d009975f4d720d1fa6c19f4897", "Your value for max depth is incorrect. Are you using the .best_params_ function?"
-    assert sha1(str(answer['randomforestclassifier__n_estimators']).encode('utf8')).hexdigest() == "fa755791d0509bb06ae715a2072de724815ed84d", "Your value for number of estimators is incorrect. Are you using the .best_params_ function?"
+    assert answer['randomforestclassifier__max_depth'] in range(2, 20), "Your value for max depth is incorrect. Are you using the .best_params_ function?"
+    assert answer['randomforestclassifier__n_estimators'] in range(10, 300), "Your value for number of estimators is incorrect. Are you using the .best_params_ function?"
     return("Success")
+
+
+def test_2_12_1_new(answer, answer1):
+    assert not answer1 is None, "Your answer does not exist. Have you passed in the correct variable?"
+    assert answer.best_params_['randomforestclassifier__max_depth'] == answer1['randomforestclassifier__max_depth'], "Your value for max depth is incorrect. Are you using the .best_params_ function?"
+    assert answer.best_params_['randomforestclassifier__n_estimators'] == answer1['randomforestclassifier__n_estimators'], "Your value for number of estimators is incorrect. Are you using the .best_params_ function?"
+    return("Success")
+
     
 def test_2_13_1(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"

@@ -159,11 +159,19 @@ def test_3_8(answer):
     assert min(answer['rank_test_score']) == 1 and max(answer['rank_test_score']) == 8, "The range of your test scores ranking is incorrect. Are you selecting the correct column?"
     return("Success")
 
-def test_3_9(answer1,answer2):
+def test_3_9(answer1, answer2):
     assert not answer1 is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert not answer2 is None, "Your answer does not exist. Have you passed in the correct variable?"
-    assert sha1(str(answer1).encode('utf8')).hexdigest() == 'aee544ceddfe7ab69a02f82bdf8ce6ea3862ff02', "Your value for best depth is incorrect. Are you using the .best_param function?"
-    assert sha1(str(round(answer2,2)).encode('utf8')).hexdigest() == 'a2e444de82bf30b09e8a8de06683efe3eda11270', "Your value for the best depth score is incorrect. Are you using the .best_score function?"
+    assert isinstance(answer1, int), "Your answer should be of type int." 
+    assert answer1 in range(100, 200), "Your value for best depth is incorrect. Are you using the .best_param function?"
+    assert round(answer2, 2) in np.linspace(0,1,101), "Your value for the best depth score is incorrect. Are you using the .best_score function?"
+    return("Success")
+
+def test_3_9_new(answer, answer1, answer2):
+    assert not answer1 is None, "Your answer does not exist. Have you passed in the correct variable?"
+    assert not answer2 is None, "Your answer does not exist. Have you passed in the correct variable?"
+    assert answer.best_params_['randomforestclassifier__max_depth'] == answer1, "Your value for best depth is incorrect. Are you using the .best_param function?"
+    assert answer.best_score_ == answer2, "Your value for the best depth score is incorrect. Are you using the .best_score function?"
     return("Success")
 
 def test_4_1(answer):
@@ -173,7 +181,7 @@ def test_4_1(answer):
 
 def test_4_2(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
-    assert sha1(str(round(answer,2)).encode('utf8')).hexdigest() == "880736bc713b1815a4a7f0169316dac1efacc0e1", "Your answer is incorrect. Are you scoring the model on the test set properly?"
+    assert round(answer, 2) in np.linspace(0,1,101), "Your answer is incorrect. Are you scoring the model on the test set properly?"
     return("Success")
 
 def test_5_1(answer1,answer2):
@@ -190,8 +198,8 @@ def test_5_2(answer1,answer2,answer3,answer4):
     assert not answer2 is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert not answer3 is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert not answer3 is None, "Your answer does not exist. Have you passed in the correct variable?"
-    assert answer1.shape == (4457,), "The dimensions of the training set is incorrect. Are you splitting correctly?"
-    assert answer2.shape == (1115,), "The dimensions of the test set is incorrect. Are you splitting correctly"
+    assert answer1.shape == (4457,) or answer1.shape == (4457, 1), "The dimensions of the training set is incorrect. Are you splitting correctly?"
+    assert answer2.shape == (1115,) or answer2.shape == (1115, 1), "The dimensions of the test set is incorrect. Are you splitting correctly"
     assert answer3.shape == (4457,), "The dimensions of the training set is incorrect. Are you splitting correctly? Are you using single brackets?"
     assert answer4.shape == (1115,), "The dimensions of the test set is incorrect. Are you splitting correctly? Are you using single brackets?"
     return("Success")
