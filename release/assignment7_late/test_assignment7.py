@@ -10,7 +10,7 @@ def test_1_1(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert sha1(answer.lower().encode('utf8')).hexdigest() == "25aeefb67cd1b85d531b5a8c34c98f807c93bf6f", "Your answer is incorrect. Please try again."
     return("Success")
-    
+
 def test_1_2_1(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert sha1(str(round(answer,3)).encode('utf8')).hexdigest() == "76108e5874d65b0aec9d1e103541ed6c8d2df69f", "Your answer is incorrect. Please try again."
@@ -20,7 +20,7 @@ def test_1_3(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert sha1(answer.lower().encode('utf8')).hexdigest() == "4d8235d83eeac8c909d966beac6de30bdaab6012", "Your answer is incorrect. Are you examining the models?"
     return("Success")
-    
+
 def test_1_4_1(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert sha1(str(round(answer,3)).encode('utf8')).hexdigest() == "e8dc057d3346e56aed7cf252185dbe1fa6454411", "Your answer is incorrect. Please try again."
@@ -30,7 +30,7 @@ def test_1_4_2(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert sha1(str(round(answer,3)).encode('utf8')).hexdigest() == "9588c3fcb43fc86f5ac79164cedf59e8e7b9e7ec", "Your answer is incorrect. Please try again."
     return("Success")
-    
+
 def test_1_4_3(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert sha1(str(round(answer,3)).encode('utf8')).hexdigest() == "959041c33324191578173f21a203e93aa2c2b431", "Your answer is incorrect. Please try again."
@@ -45,30 +45,30 @@ def test_1_5_2(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert sha1(str(round(answer,3)).encode('utf8')).hexdigest() == "fbccebab4a05483ba1b7ce5c12688ac8f69ec024", "Your answer is incorrect. Please try again."
     return("Success")
-    
+
 def test_1_5_3(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert sha1(str(round(answer,3)).encode('utf8')).hexdigest() == "18739de0047c291fd062b8733600651cf952d304", "Your answer is incorrect. Please try again."
     return("Success")
-    
+
 def test_1_6(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert len(answer) == 2, "The number of correct answers in incorrect. Please select all the correct answers."
     assert sha1(str(sorted(answer)).encode('utf8')).hexdigest() == "98d38510ecf7f95b1cee57c3c03cb16044223b36", "Your answers are incorrect. Think about what we would care about in this case."
     return("Success")
-    
+
 def test_1_7(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert sha1(answer.lower().encode('utf8')).hexdigest() == "a344ee4892b7cfc3923da199939806e49038026c", "Your answer is incorrect. Are you examining the models correctly?."
     return("Success")
-    
+
 def test_2_1(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     answer = list(answer)
     assert sha1(str(answer[0]).encode('utf8')).hexdigest() == "1c8e6d9301b25a912093090c7561436e71d7a544", "The value for not excited is incorrect. Are you using the count function?"
     assert sha1(str(answer[1]).encode('utf8')).hexdigest() == "d69729e9779952a73e8ef1e71858b08a92a0fa8b", "The value for excited is incorrect. Are you using the count function?"
     return("Success")
-    
+
 def test_2_2(answer1,answer2,answer3,answer4):
     assert not answer1 is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert not answer2 is None, "Your answer does not exist. Have you passed in the correct variable?"
@@ -81,7 +81,7 @@ def test_2_2(answer1,answer2,answer3,answer4):
     assert 'Exited' not in answer1.columns, "Make sure you are dropping the target column from the training X dataset."
     assert 'Exited' not in answer2.columns, "Make sure you are dropping the target column from the testing X dataset."
     return("Success")
-    
+
 def test_2_3(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     answer = round(answer.sum(), 1)
@@ -94,7 +94,7 @@ def test_2_3(answer):
     assert answer['test_precision'] >= 1, "The range of your test precision scores is incorrect. Are you fitting the model properly?"
     assert answer['train_precision'] >= 1, "The range of your training precision scores is incorrect. Are you fitting the model properly?"
     return("Success")
-    
+
 def test_2_4(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     answer = [round(x,1) for x in list(answer)][2:10]
@@ -107,21 +107,21 @@ def test_2_5_1(answer):
     answer = [x.lower() for x in sorted(list(answer))]
     assert sha1(str(answer).encode('utf8')).hexdigest() == "e2ac9f66b793912611aa37b7a9d4e5f35b9b10f8", "The numerical features are incorrect. Are you analyzing the data correctly?"
     return("Success")
-    
+
 def test_2_5_3(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     answer = [x.lower() for x in sorted(list(answer))]
     assert len(answer) == 1, "The number of features to drop is incorrect. Are you analysing the data correctly?"
     assert sha1(str(answer).encode('utf8')).hexdigest() == "4e16a2da8bcfed9b2787a9946e5a311accabcc23", "The feature to drop is incorrect. Are you analyzing the data correctly?"
     return("Success")
-    
+
 def test_2_5_4(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert len(answer) == 1, "The number of binary features is incorrect. Are you analysing the data correctly?"
     answer = [x.lower() for x in list(answer)]
     assert sha1(str(answer).encode('utf8')).hexdigest() == "82cde58cbe55c13ed57d26c474d181e62ca88900", "The binary features are incorrect. Are you analyzing the data correctly?"
     return("Success")
-    
+
 def test_2_6(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert sorted(list(answer.columns)) == ['fit_time','score_time','test_accuracy','test_f1','test_precision','test_recall','train_accuracy','train_f1','train_precision','train_recall'], "\
@@ -136,13 +136,13 @@ def test_2_6(answer):
     assert answer['test_f1'] >= 2.8, "The range of your test f1 scores is incorrect. Are you fitting the model properly?"
     assert answer['train_f1'] >= 5.0, "The range of your training f1 scores is incorrect. Are you fitting the model properly?"
     return("Success")
-    
+
 def test_2_7(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     answer = [round(x,1) for x in list(answer)][2:10]
     assert min(answer) >= 0.4 and max(answer) <= 1, "Your values are incorrect. Are you taking the mean of each column?"
     return("Success")
-    
+
 def test_2_8(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     answer = round(answer.sum(), 1)
@@ -155,20 +155,20 @@ def test_2_8(answer):
     assert answer['test_f1'] >= 2.0, "The range of your test f1 scores is incorrect. Are you fitting the model properly?"
     assert answer['train_f1'] >= 4.0, "The range of your training f1 scores is incorrect. Are you fitting the model properly?"
     return("Success")
-    
+
 def test_2_9(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     answer = [round(x,1) for x in list(answer)][2:10]
     assert min(answer) >= 0.4 and max(answer) <= 1, "Your values are incorrect. Are you taking the mean of each column?"
     return("Success")
-    
+
 def test_2_10(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert len(answer) == 3, "The number of correct answers is incorrect. Are you analyzing the results carefully?"
     answer = [x.lower() for x in answer]
     assert sha1(str(sorted(answer)).encode('utf8')).hexdigest() == "a365da2abbe31b0e8a8400ad876f0b619dd65ab9", "Your answer is incorrect. Are you analyzing the results carefully?"
     return("Success")
-    
+
 def test_2_11(answer1,answer2):
     assert not answer1 is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert not answer2 is None, "Your answer does not exist. Have you passed in the correct variable?"
@@ -176,7 +176,7 @@ def test_2_11(answer1,answer2):
     assert 'balanced' in str(answer1.get_params()['steps']), "Your rf_pipeline is incomplete. Please specify the class weights."
     assert  list(answer2.param_distributions.keys()) == ['randomforestclassifier__n_estimators', 'randomforestclassifier__max_depth'], "Make sure you are specifying the distribution of the parameters."
     return("Success")
-    
+
 def test_2_12_1(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert answer['randomforestclassifier__max_depth'] in range(2, 20), "Your value for max depth is incorrect. Are you using the .best_params_ function?"
@@ -190,62 +190,70 @@ def test_2_12_1_new(answer, answer1):
     assert answer.best_params_['randomforestclassifier__n_estimators'] == answer1['randomforestclassifier__n_estimators'], "Your value for number of estimators is incorrect. Are you using the .best_params_ function?"
     return("Success")
 
-    
+
 def test_2_13_1(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
-    assert sha1(str(round(answer, 3)).encode('utf8')).hexdigest() == "4058177ec80ba23809840cde675a434cf1e8ed08", "Your training score is incorrect. Are you fitting and scoring the model properly?"
+    assert round(answer,2)  in np.linspace(0,1,101), "Your training score is incorrect. Are you fitting and scoring the model properly?"
     return("Success")
-    
+
+def test_2_13_1_new(answer, answer1, X_train, y_train):
+    assert not answer1 is None, "Your answer does not exist. Have you passed in the correct variable?"
+    assert round(answer.score(X_train, y_train), 2) == round(answer1, 2), "Your training score is incorrect. Are you fitting and scoring the model properly?"
+    return("Success")
+
+
 def test_2_13_2(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
-    assert sha1(str(round(answer, 3)).encode('utf8')).hexdigest() == "019223e4ce35b897a26d652d8311e0e3bb952bad", "Your testing score is incorrect. Are you fitting and scoring the model properly?"
+    assert round(answer,2)  in np.linspace(0,1,101), "Your testing score is incorrect. Are you fitting and scoring the model properly?"
     return("Success")
-    
+
+def test_2_13_2_new(answer, answer1, X_test, y_test):
+    assert not answer1 is None, "Your answer does not exist. Have you passed in the correct variable?"
+    assert round(answer.score(X_test, y_test), 2) == round(answer2, 2), "Your testing score is incorrect. Are you fitting and scoring the model properly?"
+    return("Success")
+
+
 def test_2_14():
     assert 'sklearn' in sys.modules, "Make sure you are importing 'plot_confusion_matrix' and 'classification_report' from the sklearn module."
     return("Success")
-    
+
 def test_2_15(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert str(type(answer)) == "<class 'sklearn.metrics._plot.confusion_matrix.ConfusionMatrixDisplay'>", "Make sure you are generating a confusion matrix plot"
-    x1 = [round(x,3) for x in list(list(answer.confusion_matrix)[0])]
-    x2 = [round(x,3) for x in list(list(answer.confusion_matrix)[1])]
-    assert x1 == [0.701, 0.097], "Your confusion matrix values are wrong. Are you plotting correctly?"
-    assert x2 == [0.06, 0.142], "Your confusion matrix values are wrong. Are you plotting correctly?"
     return("Success")
-    
+
 def test_2_16_1(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert sha1(str(answer).encode('utf8')).hexdigest() == "7177575ab52680f3b082634dbeb8d2896016e7e1", "The recall value for exicted is incorrect. Are you analyzing the results correctly?"
     return("Success")
-    
+
 def test_2_16_2(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert sha1(str(answer).encode('utf8')).hexdigest() == "15e4f66808acb4ab8ac72b8c56eba22310069e7f", "The value for the weighted average is incorrect. Are you analyzing the results correctly?"
     return("Success")
-    
+
 def test_2_16_3(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert sha1(str(answer).encode('utf8')).hexdigest() == "8290abc6c261e044710e7d616082ab51cb377262", "The number of customers is incorrect. Are you analyzing the results correctly?"
     return("Success")
-    
+
 def test_2_17(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert sha1((answer.lower() + 'k').encode('utf8')).hexdigest() == "d5658db4705ff5c6ad3f152c4393f61ac86bd27f", "Your answer is incorrect. How many of these are correct?"
     return("Success")
-    
+
 def test_3_1(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert "('standardscaler', StandardScaler())" in str(answer.get_params()['steps']), "Make sure you are using the standard scaler in your model"
     assert "('svr', SVR())" in str(answer.get_params()['steps']), "Make sure you are using the support vector regressor SVR()"
     return("Success")
-    
+
 def test_3_2(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert 'mape' in str(answer), "Make sure your are passing the mape function to the make_scorer function."
     assert 'greater_is_better=False' in str(answer), "Don't for get to specify the greater_is_better argument."
     return("Success")
-    
+
 def test_3_3(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert str(type(answer)) == "<class 'dict'>", "Make sure your answer is a dictionary."
@@ -253,7 +261,7 @@ def test_3_3(answer):
     assert 'mape' in str(answer['mape_scorer']), "Make sure your are passing the make_scorer function to the dictionary."
     assert 'greater_is_better=False' in str(answer['mape_scorer']), "Make sure your are passing the make_scorer function to the dictionary."
     return("Success")
-    
+
 def test_3_4(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     answer = round(answer.sum(), 1)
@@ -266,10 +274,10 @@ def test_3_4(answer):
     assert answer['test_mape_scorer'] == -88.7, "The range of your test mape scorer is incorrect. Are you fitting the model properly?"
     assert answer['train_mape_scorer'] == -83.9, "The range of your training mape scorer is incorrect. Are you fitting the model properly?"
     return("Success")
-    
+
 def test_3_5(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     answer = [round(x,1) for x in list(answer)][2:12]
     assert min(answer) == -83.7 and max(answer) == 0.6, "Your values are incorrect. Are you taking the mean of each column?"
     return("Success")
-    
+

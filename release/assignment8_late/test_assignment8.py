@@ -179,17 +179,17 @@ def test_3_4(answer):
 
 def test_3_5_1(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
-    assert sha1(str(answer).encode('utf8')).hexdigest() == "978fe6d1795d91b622a0d9bdc073e01bec6fade4", "Your value for recall is incorrect. Are you examining the classification report?"
+    assert sha1(str(round(answer3_5a, 2)).encode('utf8')).hexdigest() == "431c7e0f059354f8237990cf99466704cc85f23a", "Your value for recall is incorrect. Are you examining the classification report?"
     return("Success")
 
 def test_3_5_2(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
-    assert sha1(str(answer).encode('utf8')).hexdigest() == "f069fb1173f145c4c667f5dea5b85068aab254f9", "Your value for the weighted precision average is incorrect. Are you examining the classification report?"
+    assert sha1(str(round(answer3_5b, 2)).encode('utf8')).hexdigest() == "431c7e0f059354f8237990cf99466704cc85f23a", "Your value for the weighted precision average is incorrect. Are you examining the classification report?"
     return("Success")
 
 def test_3_5_3(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
-    assert sha1(str(answer).encode('utf8')).hexdigest() == "0f7c620598260d93892502e533c1544348aab2cd", "Your value for the f1 score is incorrect. Are you examining the classification report?"
+    assert sha1(str(round(answer3_5c, 2)).encode('utf8')).hexdigest() == "431c7e0f059354f8237990cf99466704cc85f23a", "Your value for the f1 score is incorrect. Are you examining the classification report?"
     return("Success")
 
 def test_3_6(answer):
