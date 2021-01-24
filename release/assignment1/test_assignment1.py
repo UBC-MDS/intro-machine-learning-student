@@ -120,9 +120,9 @@ def test_4_6(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert answer.shape == (3, 2), "The dimensions of the dataframe is incorrect. Are you creating it properly?"
     assert sorted(list(answer.columns)) == ['accuracy', 'strategy'], "The columns names are incorrect. Please refer to the question."
-    assert list(answer.loc[0].values) == ['stratified', 0.77], "Your dataframe values are incorect."
-    assert list(answer.loc[1].values) == ['most_frequent', 0.88], "Your dataframe values are incorect."
-    assert list(answer.loc[2].values) == ['uniform', 0.45], "Your dataframe values are incorect."
+    assert list(answer.loc[0].values) == ['stratified', 0.77], "Your dataframe values are incorrect."
+    assert list(answer.loc[1].values) == ['most_frequent', 0.88], "Your dataframe values are incorrect."
+    assert list(answer.loc[2].values) == ['uniform', 0.45], "Your dataframe values are incorrect."
     return "Success"
 
 
@@ -172,11 +172,11 @@ def test_5_3(answer1,answer2):
 def test_5_4(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert answer == 0.0, "We expect your answer to be 0.0. Are you doing fitting the model correctly?"
-    return "Succcess"
+    return "Success"
 
 
 def test_5_5(answer):
     assert not answer is None, "Your answer does not exist. Have you passed in the correct variable?"
     assert sha1(str(answer + 'k').encode('utf8')).hexdigest(
-    ) == 'a7d0008d025f37434b7cd8c853384cd610f6d92c', 'Your answer is incorrect. Please try again'
+    ) == 'a1382f8f61bcba9266e29a3fce9ccd7c9b961459', 'Your answer is incorrect. Please try again'
     return("Success")
